@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.flightApp.dto.PassengersDto;
+import com.flightApp.dto.Passengers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,6 +42,6 @@ public class BookingRequestModel {
 
 	private String mealType;
 
-	private List<PassengersDto> passengers = new ArrayList<>();
+	private List<Passengers> passengers = new ArrayList<>();
 
 }

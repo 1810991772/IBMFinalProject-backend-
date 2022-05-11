@@ -43,6 +43,6 @@ public class BookingDto {
 	
 	private String status;
 	
-	private List<PassengersDto> passengersDto = new ArrayList<>();
+	private List<Passengers> passengersDto = new ArrayList<>();
 
 }
