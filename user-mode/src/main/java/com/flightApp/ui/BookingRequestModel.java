@@ -1,37 +1,38 @@
-package com.flightApp.dto;
+package com.flightApp.ui;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.flightApp.dto.PassengersDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-public class BookingDto {
+public class BookingRequestModel {
 	
-	private String pnrNumber;
-
 	private String flightName;
-	
+
 	private String flightId;
 
-	private String date;
+	private LocalDateTime date;
 	
 	private LocalDate bookingDate;
-	
-	private String startTime;
-
-	private String endTime;
 
 	private String source;
 
 	private String destination;
+
+	private String startTime;
+
+	private String endTime;
 
 	private String name;
 
@@ -40,9 +41,7 @@ public class BookingDto {
 	private int totalSeats;
 
 	private String mealType;
-	
-	private String status;
-	
-	private List<PassengersDto> passengersDto = new ArrayList<>();
+
+	private List<PassengersDto> passengers = new ArrayList<>();
 
 }
