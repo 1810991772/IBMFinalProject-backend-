@@ -19,7 +19,7 @@ public interface BookingProxy {
 	@PostMapping("/booking")
 	public BookingDto bookFlight(@RequestBody BookingDto bookingDto);
 	
-	@GetMapping("/airline/search/")
+	@GetMapping("/airline/search/flights")
 	public List<FlightDto> searchFlights(@RequestParam String source, @RequestParam String destination,
 			@RequestParam String departureDate, @RequestParam String seatType);
 	

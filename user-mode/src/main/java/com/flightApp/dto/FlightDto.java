@@ -11,7 +11,7 @@ public class FlightDto {
 	
 	private String flightId;
 
-	private String airline;
+	private String airLine;
 
 	private String source;
 

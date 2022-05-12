@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,6 +45,7 @@ public class BookingDto {
 	
 	private String status;
 	
+	@ElementCollection
 	private List<Passengers> passengersDto = new ArrayList<>();
 
 }
