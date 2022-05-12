@@ -18,17 +18,17 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BookingDto {
-
+	
 	private String pnrNumber;
-
+	
 	private String flightName;
 
 	private String flightId;
-
+	
 	private LocalDate date;
-
+	
 	private LocalDate bookingDate;
-
+	
 	private String startTime;
 
 	private String endTime;
@@ -44,9 +44,9 @@ public class BookingDto {
 	private int totalSeats;
 
 	private String mealType;
-
+	
 	private String status;
-
+	
 	@ElementCollection
 	private List<Passengers> passengers = new ArrayList<>();
 

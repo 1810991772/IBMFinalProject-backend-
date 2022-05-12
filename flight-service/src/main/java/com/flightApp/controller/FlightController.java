@@ -66,7 +66,7 @@ public class FlightController {
 	public ResponseEntity<List<FlightDto>> searchFlights(@RequestParam String source, @RequestParam String destination,
 			@RequestParam String departureDate, @RequestParam String seatType) {
 		log.info("searchFlights called");
-		List<FlightDto> res = flightService.searchFlights(source, destination, departureDate,seatType);
+		List<FlightDto> res = flightService.searchFlights(source, destination, departureDate, seatType);
 
 		return ResponseEntity.status(HttpStatus.OK).body(res);
 

@@ -23,6 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/v1.0/flight")
 @Slf4j
 public class CommonController {
+	
 
 	private final CommonProxy commonProxy;
 
@@ -33,18 +34,20 @@ public class CommonController {
 		this.modelMapper = modelMapper;
 	}
 
+
 	@GetMapping("/search")
 	@CircuitBreaker(name = "flightWSCircuitBreaker", fallbackMethod = "flightWSFallBack")
 	public ResponseEntity<List<FlightDto>> searchFlights(@RequestParam String source, @RequestParam String destination,
 			@RequestParam String date, @RequestParam String seatType) {
-
+		
 		log.info("searchFlights called");
-
+		
 		final List<FlightDto> searchedFlights = commonProxy.searchFlights(source, destination, date, seatType);
-
+		
 		return ResponseEntity.status(HttpStatus.OK).body(searchedFlights);
 
 	}
+
 
 	@GetMapping("/flights")
 	@CircuitBreaker(name = "flightWSCircuitBreaker", fallbackMethod = "flightWSFallBack")
@@ -60,10 +63,5 @@ public class CommonController {
 
 	}
 
-	public ResponseEntity<?> flightWSFallBack(Exception e) {
-		log.info("called flightWSFallBack");
-		return ResponseEntity.status(HttpStatus.BAD_GATEWAY)
-				.body("within flightWSFallBack method. COMMON-WS is down" + e.toString());
-	}
 
 }
